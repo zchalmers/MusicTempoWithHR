@@ -17,6 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        showStartScreen()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +49,57 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    private func showStartScreen() {
+        guard let window = self.window else {
+            fatalError("No window to attach our controller, should never happen")
+        }
+        
+        let navigationController = UINavigationController()
+        
+        let mainView = MainViewController.instantiateViewController()
+        let songURLs = getSongURLs()
+        let mainPresenter = MainPresenter(view: mainView, songURLs: songURLs)
+        mainView.delegate = mainPresenter
+        mainView.dataSource = mainPresenter
+        
+        window.rootViewController = navigationController
+        navigationController.pushViewController(mainView, animated: true)
+    }
+    
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        // change the root view controller to your specific view controller
+        DispatchQueue.main.async {
+            window.rootViewController = vc
+        }
+    }
+    private func getSongURLs() -> [URL] {
+        var songPaths: [URL] = []
+        
+        // Get the URL for the app bundle
+        guard let bundleURL = Bundle.main.resourceURL else {
+            print("Failed to locate app bundle.")
+            return []
+        }
+        
+        // Get the URLs for all files in the app bundle
+        guard let fileURLs = try? FileManager.default.contentsOfDirectory(at: bundleURL, includingPropertiesForKeys: nil) else {
+            print("Failed to retrieve contents of app bundle.")
+            return []
+        }
+        
+        // Filter the file URLs to include only those with .mp3 extension
+        for fileURL in fileURLs {
+            if fileURL.pathExtension == "mp3" {
+                songPaths.append(fileURL)
+                print("SONG URL" + fileURL.absoluteString)
+            }
+        }
+        
+        return songPaths
+    }
 }
+    
 

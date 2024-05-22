@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController title="Main View Controller" id="Y6W-OH-hqX" customClass="MainViewController" customModule="MusicTempoWithHR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.25" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="gDY-hM-C1F" userLabel="slider">
+                                <rect key="frame" x="14" y="638" width="365" height="31"/>
+                            </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6O-gr-BjU" userLabel="image">
+                                <rect key="frame" x="75" y="139" width="243" height="205"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bba-49-363" userLabel="tempo">
+                                <rect key="frame" x="150" y="678" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-AB-KFV" userLabel="songName">
+                                <rect key="frame" x="150" y="417" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgB-vj-Ko2">
+                                <rect key="frame" x="150" y="742" width="93" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0zZ-AB-KFV" firstAttribute="top" secondItem="v6O-gr-BjU" secondAttribute="bottom" constant="73" id="BTL-lE-gjA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bba-49-363" secondAttribute="trailing" constant="150" id="BdR-XD-dQW"/>
+                            <constraint firstItem="Bba-49-363" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="150" id="Cug-6L-vba"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gDY-hM-C1F" secondAttribute="bottom" constant="150" id="GP3-6P-XOl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="v6O-gr-BjU" secondAttribute="trailing" constant="75" id="KSB-E5-0iP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lgB-vj-Ko2" secondAttribute="trailing" constant="150" id="L4Q-r1-4cK"/>
+                            <constraint firstItem="gDY-hM-C1F" firstAttribute="top" secondItem="0zZ-AB-KFV" secondAttribute="bottom" constant="200" id="NQq-f9-cW8"/>
+                            <constraint firstItem="lgB-vj-Ko2" firstAttribute="top" secondItem="Bba-49-363" secondAttribute="bottom" constant="43" id="Sh9-8n-9mZ"/>
+                            <constraint firstItem="v6O-gr-BjU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="75" id="YR6-Og-9hh"/>
+                            <constraint firstItem="v6O-gr-BjU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="bxM-Kx-wdU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gDY-hM-C1F" secondAttribute="trailing" constant="16" id="gDp-GP-KuD"/>
+                            <constraint firstItem="gDY-hM-C1F" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="hsc-AG-Apy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lgB-vj-Ko2" secondAttribute="bottom" constant="41" id="p2e-El-08T"/>
+                            <constraint firstItem="0zZ-AB-KFV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="150" id="w53-W2-RVF"/>
+                            <constraint firstItem="Bba-49-363" firstAttribute="top" secondItem="gDY-hM-C1F" secondAttribute="bottom" constant="10" id="xdo-9g-Trk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0zZ-AB-KFV" secondAttribute="trailing" constant="150" id="yCy-0R-cqU"/>
+                            <constraint firstItem="lgB-vj-Ko2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="150" id="yxA-3e-8j0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="v6O-gr-BjU" id="eMt-9g-1mk"/>
+                        <outlet property="slider" destination="gDY-hM-C1F" id="Avu-2M-GoN"/>
+                        <outlet property="songName" destination="0zZ-AB-KFV" id="8PE-PF-HwP"/>
+                        <outlet property="tempo" destination="Bba-49-363" id="3gc-ot-8wg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16.030534351145036" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
